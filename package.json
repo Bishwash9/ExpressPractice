@@ -1,0 +1,24 @@
+{
+  "name": "expresspractice",
+  "version": "1.0.0",
+  "description": "a express practice repository",
+  "homepage": "https://github.com/basyaman/ExpressPractice#readme",
+  "bugs": {
+    "url": "https://github.com/basyaman/ExpressPractice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basyaman/ExpressPractice.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {}
+}
