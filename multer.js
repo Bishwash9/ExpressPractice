@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 const upload = multer ({
     storage,
     fileFilter:fileFilter,
-    limits:{fileSize:10244*24}
+    limits:{fileSize:1024*24*5}
 });
 
 app.post('/uploadfile',upload.single('photo'),(req,res)=>{
