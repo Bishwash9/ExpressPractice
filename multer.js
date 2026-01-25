@@ -8,14 +8,31 @@ app.use(express.json());
 const multer = require('multer');
 
 const fileFilter = ((req,file,cb)=>{
-    if(file.mimetype === 'image/jpg' || file.mimetype === 'image/png'){
+    if(file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpeg'){
         cb(null,true);
     }else{
         cb(new Error('Only jpg and png file is allowed'),false);
     }
 });
 
+const storage = multer.diskStorage({
+    destination: ((req,file,cb)=>{
+        cb(null,'uploads');
+    }),
+    filename : ((req,file,cb)=>{
+        cb(null,file.originalname);
+    })
+}); 
 
+const upload = multer ({
+    storage,
+    fileFilter:fileFilter,
+    limits:{fileSize:10244*24}
+});
+
+app.post('/uploadfile',upload.single('photo'),(req,res)=>{
+    res.json(req.file);
+});
 
 
 app.listen(port,()=>{
