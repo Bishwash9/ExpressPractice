@@ -13,3 +13,17 @@ let productList = [
 router.get('/productList',(req,res)=>{
     res.json(productList)
 });
+
+router.post('/productList', (req,res)=>{
+    const {name , category} = req.body;
+    
+    const newProduct = {
+        id:productList.length +1,
+        name,
+        category
+    };
+
+    productList.push(newProduct);
+
+    res.json({product:newProduct, message:"Products added successfully"});
+});
