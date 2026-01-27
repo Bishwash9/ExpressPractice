@@ -8,3 +8,5 @@ let categoryList = ['CLoth', 'Home', 'Electronics'];
 router.get('/categoryList', (req,res)=>{
     res.json(categoryList)
 });
+
+router.post('/cate')

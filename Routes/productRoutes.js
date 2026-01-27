@@ -27,3 +27,11 @@ router.post('/productList', (req,res)=>{
 
     res.json({product:newProduct, message:"Products added successfully"});
 });
+
+router.get('/:prodcutId', (req,res)=>{
+    let prodcutId = req.params.prodcutId;
+    let findProduct = productList.find(p=>p.id === prodcutId);
+    res.send(findProduct);
+});
+
+module.exports = router;
