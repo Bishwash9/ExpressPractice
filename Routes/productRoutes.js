@@ -45,6 +45,14 @@ router.put('/productList/:productId', (req,res)=>{
     });
 });
 
+router.delete('/productList/:productId', (req,res)=>{
+    const pId = Number(req.params.productId);
+    const productIndex = productList.findIndex(p=>p.prodcutId === pId);
+    productList.splice(productIndex,1);
+
+    res.json({message:"Product deleted successfully"});
+});
+
 router.get('/:prodcutId', (req,res)=>{
     let prodcutId = req.params.prodcutId;
     let findProduct = productList.find(p=>p.id === prodcutId);
