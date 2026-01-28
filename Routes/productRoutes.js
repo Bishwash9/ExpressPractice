@@ -28,6 +28,23 @@ router.post('/productList', (req,res)=>{
     res.json({product:newProduct, message:"Products added successfully"});
 });
 
+router.put('/productList/:productId', (req,res)=>{
+    const updateProduct = productList.find(p=>p.productId == req.params.id);
+
+    if(!updateProduct){
+        return res.status(404).json({message:"Unable to find product"});
+
+    }
+    const {name,category} = req.body;
+    updateProduct.name = name;
+    updateProduct.category = category;
+
+    res.json({
+        messag: "Product updated successfully",
+        product: updateProduct
+    });
+});
+
 router.get('/:prodcutId', (req,res)=>{
     let prodcutId = req.params.prodcutId;
     let findProduct = productList.find(p=>p.id === prodcutId);
