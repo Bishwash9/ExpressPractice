@@ -9,4 +9,4 @@ router.get('/categoryList', (req,res)=>{
     res.json(categoryList)
 });
 
-router.post('/cate')
+module.exports = router;
