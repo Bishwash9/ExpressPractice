@@ -16,4 +16,12 @@ router.post('/categoryList', (req,res)=>{
     res.json({category:category, message:"Category added successfully"});
 });
 
+router.delete('/cagegoryList/:category', (req,res)=>{
+    const {category} = req.params;
+
+    categoryList = categoryList.filter((cat)=> cat !== category);
+
+    res.json({message:"Category deleted successfully"});
+});
+
 module.exports = router;
