@@ -27,10 +27,20 @@ router.delete('/categoryList/:category', (req,res)=>{
     res.json({message:"Category deleted successfully"});
 });
 
-//update category
+
 router.put('/categoryList/:category', (req,res)=>{
     const {category} = req.params;
     const {newCategory} = req.body;
+
+    const categoryIndex = categoryList.findIndex((cat)=> cat === category);
+
+    if(categoryIndex === -1){
+        return res.status(404).json({message:"Category not found"});
+    }
+
+    categoryList[categoryIndex] = newCategory;
+
+    res.json({message:"Category updated successfully", category:newCategory});
 });
 
 module.exports = router;
