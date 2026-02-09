@@ -15,6 +15,7 @@ const fileFilter = ((req,file,cb)=>{
     }
 });
 
+//this is for storing the file in the disk storage
 const storage = multer.diskStorage({
     destination: ((req,file,cb)=>{
         cb(null,'uploads');

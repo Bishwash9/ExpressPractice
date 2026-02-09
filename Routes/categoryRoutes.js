@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.use(express.json());
 
-let categoryList = ['CLoth', 'Home', 'Electronics'];
+let categoryList = ['Cloth', 'Home', 'Electronics'];
 
 router.get('/categoryList', (req,res)=>{
     res.json(categoryList)
@@ -16,7 +16,7 @@ router.post('/categoryList', (req,res)=>{
     res.json({category:category, message:"Category added successfully"});
 });
 
-router.delete('/cagegoryList/:category', (req,res)=>{
+router.delete('/categoryList/:category', (req,res)=>{
     const {category} = req.params;
 
     categoryList = categoryList.filter((cat)=> cat !== category);
