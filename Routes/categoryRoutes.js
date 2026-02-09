@@ -9,6 +9,7 @@ let categoryList = ['Cloth', 'Home', 'Electronics'];
 router.get('/categoryList', (req,res)=>{
     res.json(categoryList)
 });
+//add new category
 router.post('/categoryList', (req,res)=>{
     const {category} = req.body;
 
