@@ -27,4 +27,10 @@ router.delete('/categoryList/:category', (req,res)=>{
     res.json({message:"Category deleted successfully"});
 });
 
+//update category
+router.put('/categoryList/:category', (req,res)=>{
+    const {category} = req.params;
+    const {newCategory} = req.body;
+});
+
 module.exports = router;
