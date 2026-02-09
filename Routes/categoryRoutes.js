@@ -18,6 +18,7 @@ router.post('/categoryList', (req,res)=>{
     res.json({category:category, message:"Category added successfully"});
 });
 
+//delete category
 router.delete('/categoryList/:category', (req,res)=>{
     const {category} = req.params;
 
