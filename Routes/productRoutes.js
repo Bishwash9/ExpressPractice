@@ -30,6 +30,7 @@ router.post('/productList', (req,res)=>{
     res.json({product:newProduct, message:"Products added successfully"});
 });
 
+//update product
 router.put('/productList/:productId', (req,res)=>{
     const updateProduct = productList.find(p=>p.productId == req.params.id);
 
@@ -47,6 +48,7 @@ router.put('/productList/:productId', (req,res)=>{
     });
 });
 
+//delete product
 router.delete('/productList/:productId', (req,res)=>{
     const pId = Number(req.params.productId);
     const productIndex = productList.findIndex(p=>p.prodcutId === pId);
@@ -55,6 +57,7 @@ router.delete('/productList/:productId', (req,res)=>{
     res.json({message:"Product deleted successfully"});
 });
 
+//get product by id
 router.get('/:prodcutId', (req,res)=>{
     let prodcutId = req.params.prodcutId;
     let findProduct = productList.find(p=>p.id === prodcutId);
