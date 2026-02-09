@@ -5,6 +5,7 @@ router.use(express.json());
 
 let categoryList = ['Cloth', 'Home', 'Electronics'];
 
+//get all categories
 router.get('/categoryList', (req,res)=>{
     res.json(categoryList)
 });
