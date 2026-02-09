@@ -25,6 +25,7 @@ const storage = multer.diskStorage({
     })
 }); 
 
+//this is for uploading the file with the defined storage and file filter and also limit the file size
 const upload = multer ({
     storage,
     fileFilter:fileFilter,
