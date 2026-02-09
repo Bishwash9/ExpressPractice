@@ -10,10 +10,12 @@ let productList = [
     {id:4, name:'Oppo', category:'Phone'}
 ]
 
+//get all products
 router.get('/productList',(req,res)=>{
     res.json(productList)
 });
 
+//add product
 router.post('/productList', (req,res)=>{
     const {name , category} = req.body;
     
