@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.use(express.json());
 
-let categoryList = ['Cloth', 'Home', 'Electronics'];
+let categoryList = ['Clothes', 'Accessories', 'Electronics', 'Footwear'];
 
 //get all categories
 router.get('/categoryList', (req,res)=>{
